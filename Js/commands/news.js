@@ -38,7 +38,7 @@ module.exports = {
 			if (index >= 0 && index < news.length) {
 				await interaction.reply(`${news[index]['title']}\n\n${news[index]['description']}\n${news[index]['link']}`);
 			} else if (index < 0 || index >= news.length) {
-				await interaction.reply({ content: `O índice colocado não existe, tenta outro :3`, ephemeral: true });
+				await interaction.reply({ content: `O índice colocado não existe, tenta entre 0 e ${news.length - 1}.`, ephemeral: true });
 			}
 		}
 	},
