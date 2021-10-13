@@ -25,7 +25,9 @@ module.exports = {
 
 		news.forEach(e => news_list.push('', e['title'] + '.'))
 
-		const new_string = news_list.toString().replace(/,/g, '\n')
+		// const new_string = news_list.toString().replace(/,/g, '\n');
+
+		const new_string = news.reduce((acc, cur) => acc += `${cur.title}.\n\n`, "");
 
 		if (interaction.options.getSubcommand() === 'geral') {
 
