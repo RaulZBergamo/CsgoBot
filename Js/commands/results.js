@@ -9,7 +9,7 @@ module.exports = {
             subcommand
                 .setName('match_id')
                 .setDescription('Search by match id !')    
-                .addStringOption(option => option.setName('match_id').setDescription('Match id !')),
+                .addStringOption(option => option.setName('match_id').setDescription('Match id !'))
         )
         .addSubcommand(subcommand => 
             subcommand
@@ -58,11 +58,15 @@ module.exports = {
             const team = interaction.options.getString('team_name');
 
             for (let i = 0; i < results.length; i++) {
-                if (results[i]['team1'] === team || results[i]['team2'] === team) {
+                if (results[i]['team1']['name'] === team || results[i]['team2']['name'] === team) {
                     new_string = `${results[i]['event']} - ${results[i]['maps']}\n${results[i]['team1']['name']} ${results[i]['team1']['result']} X ${results[i]['team2']['result']} ${results[i]['team2']['name']}`;
                     matchesList.push(`${new_string}\n`)
                 }  
             }
+
+            new_string = matchesList.reduce((acc, cur) => acc += `${cur}\n`, "");
+
+            await interaction.reply(new_string);
         }
 	},
 };
