@@ -10,7 +10,13 @@ const matchesEmbed = {
 		icon_url: 'https://static-cdn.jtvnw.net/jtv_user_pictures/4102e83a14a6b68a-profile_image-300x300.jpeg',
 		url: 'https://www.hltv.org/',
 	},
-	fields: []
+    thumbnail: {
+		url: 'https://play-lh.googleusercontent.com/chI-8vX4CIbO-pm14tb5UAjip20CwmytQPdz8sBmqNjPqTp1tptpBOZc-aGyYqDesw',
+	},
+	fields: [],
+    footer: {
+		text: 'Half-Life TV Unofficial.',
+	},
 };
 
 function createAllMatches(match, embed) {
@@ -34,7 +40,7 @@ module.exports = {
 	
         const matches = await HLTV.getMatches();
 
-        console.log(matches[1]['time']);
+        matchesEmbed.fields = []
 
         if (interaction.options.getSubcommand() === 'all') {
             matches.forEach(match => createAllMatches(match, matchesEmbed))

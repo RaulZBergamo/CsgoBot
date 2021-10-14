@@ -39,7 +39,9 @@ module.exports = {
 
 		const news = await HLTV.getNews()	
 		
-		let news_list = [];
+		// let news_list = [];
+
+		newsEmbed.fields = []
 
 		// news.forEach(e => news_list.push('', e['title'] + '.'))
 
