@@ -39,17 +39,9 @@ module.exports = {
 
 		const news = await HLTV.getNews()	
 		
-		// let news_list = [];
-
 		newsEmbed.fields = []
 
-		// news.forEach(e => news_list.push('', e['title'] + '.'))
-
 		news.forEach(e => newsEmbed.fields.push({ name: e['title'], value: '\u200b' }))
-
-		// const new_string = news_list.toString().replace(/,/g, '\n');
-
-		// const new_string = news.reduce((acc, cur) => acc += `${cur.title}.\n\n`, "");
 
 		if (interaction.options.getSubcommand() === 'geral') {
 

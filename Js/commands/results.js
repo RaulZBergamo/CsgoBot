@@ -44,9 +44,6 @@ module.exports = {
 	async execute(interaction) {
     
         const results = await HLTV.getResults();
-        
-        // let matchesList = []
-        // let new_string = ''
 
         exampleEmbed.fields = [];
         exampleEmbed.title = 'Resultados';
@@ -60,7 +57,6 @@ module.exports = {
                     exampleEmbed.fields.push( {name: `${results[i]['event']} - ${results[i]['maps']}`, value: `${results[i]['team1']['name']} ${results[i]['team1']['result']} X ${results[i]['team2']['result']} ${results[i]['team2']['name']}`} )
                     exampleEmbed.title = `Resultado - ${results[i]['event']}`;
                     exampleEmbed.url = 'https://www.hltv.org' + results[i]['matchId'];
-                    // new_string = `${results[i]['event']} - ${results[i]['maps']}\n${results[i]['team1']['name']} ${results[i]['team1']['result']} X ${results[i]['team2']['result']} ${results[i]['team2']['name']}`;
                 }  
             }
 
@@ -72,16 +68,11 @@ module.exports = {
             for (let i = 0; i < results.length; i++) {
                 if (results[i]['event'] === event_name) {
                     exampleEmbed.fields.push( {name: `${results[i]['event']} - ${results[i]['maps']}`, value: `${results[i]['team1']['name']} ${results[i]['team1']['result']} X ${results[i]['team2']['result']} ${results[i]['team2']['name']}\n`} )
-                    // new_string = `${results[i]['event']} - ${results[i]['maps']}\n${results[i]['team1']['name']} ${results[i]['team1']['result']} X ${results[i]['team2']['result']} ${results[i]['team2']['name']}`;
-                    // matchesList.push(`${new_string}\n`)
                 }  
             }
             
             exampleEmbed.title = `Resultados - ${event_name}`;
 
-            // new_string = matchesList.reduce((acc, cur) => acc += `${cur}\n`, "");
-
-            // await interaction.reply(new_string);
             await interaction.reply({ embeds: [exampleEmbed] });
 
         } else if (interaction.options.getSubcommand() === 'team_name') {
@@ -90,16 +81,11 @@ module.exports = {
             for (let i = 0; i < results.length; i++) {
                 if (results[i]['team1']['name'] === team || results[i]['team2']['name'] === team) {
                     exampleEmbed.fields.push( {name: `${results[i]['event']} - ${results[i]['maps']}`, value: `${results[i]['team1']['name']} ${results[i]['team1']['result']} X ${results[i]['team2']['result']} ${results[i]['team2']['name']}\n`} )
-                    // new_string = `${results[i]['event']} - ${results[i]['maps']}\n${results[i]['team1']['name']} ${results[i]['team1']['result']} X ${results[i]['team2']['result']} ${results[i]['team2']['name']}`;
-                    // matchesList.push(`${new_string}\n`)
                 }  
             }
 
-            // new_string = matchesList.reduce((acc, cur) => acc += `${cur}\n`, "");
-
             exampleEmbed.title = `Resultados - ${team}`;  
 
-            // await interaction.reply(new_string);
             await interaction.reply({ embeds: [exampleEmbed] });
         }
 	},
