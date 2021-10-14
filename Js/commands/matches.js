@@ -2,7 +2,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const HLTV = require('hltv-api').default;
 
 const matchesEmbed = {
-	color: 0x0049ff,
+	color: 0x2b6ea4,
 	title: 'Partidas de hoje',
 	url: 'https://www.hltv.org/',
 	author: {

@@ -3,7 +3,7 @@ const HLTV = require('hltv-api').default
 const express = require('express')
 
 const newsEmbed = {
-	color: 0x0049ff,
+	color: 0x2b6ea4,
 	title: 'Notícias de hoje',
 	url: 'https://www.hltv.org/',
 	author: {

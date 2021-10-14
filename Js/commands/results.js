@@ -2,7 +2,7 @@ const { SlashCommandBuilder } = require('@discordjs/builders');
 const HLTV = require('hltv-api').default
 
 const exampleEmbed = {
-	color: 0x0049ff,
+	color: 0x2b6ea4,
 	title: 'Resultados',
 	url: 'https://www.hltv.org',
     thumbnail: {
