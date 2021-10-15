@@ -73,7 +73,7 @@ module.exports = {
 
         exampleEmbed.fields.push
 
-        // books.forEach(e => exampleEmbed.fields.push( {name: e['title'], value: e['author']} ));
+        books.forEach(e => exampleEmbed.fields.push( {name: e['title'], value: e['author']} ));
 
         for (let i = 0; i < books.length; i++) {
 

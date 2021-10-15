@@ -48,7 +48,7 @@ module.exports = {
         exampleEmbed.fields = [];
         exampleEmbed.title = 'Resultados';
         exampleEmbed.url = 'https://www.hltv.org';
-
+        
         if (interaction.options.getSubcommand() === 'match_id') {
             const match_id = interaction.options.getString('match_id');
 

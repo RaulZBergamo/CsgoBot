@@ -39,7 +39,8 @@ module.exports = {
 
 		const news = await HLTV.getNews()	
 		
-		newsEmbed.fields = []
+		newsEmbed.fields = [];
+		newsEmbed.title = 'Notícias de hoje';
 
 		news.forEach(e => newsEmbed.fields.push({ name: e['title'], value: '\u200b' }))
 

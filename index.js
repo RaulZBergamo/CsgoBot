@@ -50,5 +50,12 @@ client.on('interactionCreate', async interaction => {
 	}
 });
 
+client.on('guildCreate', async guild => {
+	console.log(`Joined a guild: ${guild.name} !`);
+})
+
+client.on('guildDelete', guild => {
+	console.log(`Left a guild ${guild.name} !`);
+})
 
 client.login(process.env.DISCORD_TOKEN);
