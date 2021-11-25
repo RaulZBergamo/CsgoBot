@@ -7,7 +7,7 @@ module.exports = {
 		.setDescription('Replies with Player info!'),
 	async execute(interaction) {
 		
-        const playersResponse = await HLTV.getStatsByMatchId();
+        // const playersResponse = await HLTV.getStatsByMatchId();
 
         console.log(playersResponse);
 

@@ -69,7 +69,7 @@ module.exports = {
                     createAllMatches(matches[i], matchesEmbed);
                     matchesEmbed.thumbnail.url = matches[i]['event']['crest']
                     if (team.replace(/ /g, '').toUpperCase() === matches[i]['teams'][0]['name'].replace(/ /g, '').toUpperCase()) {
-                        matchesEmbed.title = `Proximas partidas - ${matches[i]['teams'][0]['name']}`
+                        matchesEmbed.title = `Partidas proximas - ${matches[i]['teams'][0]['name']}`
                     } else {
                         matchesEmbed.title = `Proximas partidas - ${matches[i]['teams'][1]['name']}`
                     }
